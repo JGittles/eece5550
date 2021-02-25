@@ -1,0 +1,35 @@
+<launch>
+
+    
+
+    <node name="turtlesim_node1" pkg="turtlesim" type="turtlesim_node" output ="screen" />
+         
+    
+    
+    <node name="tracker1" pkg="traj_tracker" type="tracker.py" output ="screen" > 
+        <param name="pose_x" value="1.0" type="double" />
+        <param name="pose_y" value="1.0" type="double" />
+        <param name="pose_theta" value="0" type="double" />
+        <param name="turtle" value="turtle1" />
+        <rosparam param="trajectory_description" command="load" file="$(find traj_tracker)/config/triangle_5.yaml" />  
+        </node>
+
+    <node name="tracker2" pkg="traj_tracker" type="tracker.py" output ="screen" > 
+        <param name="pose_x" value="10.0" type="double" />
+        <param name="pose_y" value="10.0" type="double" />
+        <param name="pose_theta" value="-1.57" type="double" />
+        <param name="turtle" value="turtle2" />
+        <rosparam param="trajectory_description" command="load" file="$(find traj_tracker)/config/triangle_5.yaml" />  
+        </node>    
+
+    <node name="tracker3" pkg="traj_tracker" type="tracker.py" output ="screen" > 
+        <param name="pose_x" value="5.5" type="double" />
+        <param name="pose_y" value="5.5" type="double" />
+        <param name="pose_theta" value="3.14" type="double" />
+        <param name="turtle" value="turtle3" />
+        <rosparam param="trajectory_description" command="load" file="$(find traj_tracker)/config/triangle_5.yaml" />  
+        </node>    
+
+
+
+</launch>

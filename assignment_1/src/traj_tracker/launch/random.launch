@@ -1,0 +1,10 @@
+<launch>
+    <node name="turtlesim_node1" pkg="turtlesim" type="turtlesim_node" output ="screen" /> 
+    
+
+    <node name="tracker_random1" pkg="traj_tracker" type="tracker_random.py" output ="screen" /> 
+    
+
+
+
+</launch>
